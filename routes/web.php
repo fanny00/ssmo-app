@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FuncionariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicio');
+})->name('funcionarios.inicio');
+
+Route::get('/funcionarios', [FuncionariosController::class, 'index'])->name('funcionarios.index');
+Route::get('/formulario', [FuncionariosController::class, 'show'])->name('funcionarios.show');
+Route::post('/formulario', [FuncionariosController::class, 'store'])->name('funcionarios.store');
