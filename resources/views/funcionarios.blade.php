@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenido')
+
    
     <table class="table">
         <thead>
@@ -69,8 +70,9 @@
         <tbody>
             
             @foreach ($funcionarios as $funcionario)
+            
                 <tr>
-                    @if ( $funcionario->fecha_nacimiento_funcionario < (now()->year)-30 )
+                    @if ( $funcionario->fecha_nacimiento_funcionario < (now()->year)-30 && Str::contains($funcionario->direccion_funcionario, ['Av.', 'Calle']) )
                         <td>{{ $funcionario->rut_funcionario }}</td>
                         <td>{{ $funcionario->nombre_funcionario }}</td>
                         <td>{{ $funcionario->direccion_funcionario }}</td>
