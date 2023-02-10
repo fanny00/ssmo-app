@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Str;
 use App\Models\Funcionarios;
 use Illuminate\Http\Request;
 
@@ -28,7 +27,7 @@ class FuncionariosController extends Controller
     {
 
         $this->validate($request, [
-            'rut_funcionario' => 'required',
+            'rut_funcionario' => 'required|max:10|min:8',
             'nombre_funcionario' => 'required|max:30',
             'direccion_funcionario'  => 'required',
             'fecha_nacimiento_funcionario'  => 'required',
