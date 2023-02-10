@@ -15,7 +15,7 @@
             name="rut_funcionario" 
             class="form-control @error('rut_funcionario') border-red-500 @enderror" 
             id="rut_funcionario" 
-            placeholder="11.111.111-1"
+            placeholder="11111111-1"
             value="{{ old('rut_funcionario') }}"
         />
     </div>
