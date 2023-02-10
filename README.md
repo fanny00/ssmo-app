@@ -1,4 +1,4 @@
-<p>Para installar</p>
+<p>Para instalar</p>
 <hr>
 <p>composer install</p>
 <p>npm install</p>
