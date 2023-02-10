@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Models\Funcionarios;
 use Illuminate\Http\Request;
 
@@ -43,6 +44,16 @@ class FuncionariosController extends Controller
         ]);
 
         return redirect()->route('funcionarios.index')->with('success','Ingreso de funcionario realizado con exito.');
+    }
+
+
+    public function rut($rut_funcionario)
+    {
+
+     $funcionario=funcionarios::firstwhere('rut_funcionario', $rut_funcionario);
+        
+        return response()->json($funcionario, 200, []);
+     
     }
 
     

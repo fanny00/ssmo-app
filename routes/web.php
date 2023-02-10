@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('/funcionarios', [FuncionariosController::class, 'index'])->name('funcionarios.index');
 Route::get('/formulario', [FuncionariosController::class, 'show'])->name('funcionarios.show');
 Route::post('/formulario', [FuncionariosController::class, 'store'])->name('funcionarios.store');
+Route::get('/funcionario/{rut_funcionario}', [FuncionariosController::class, 'rut'])->name('funcionario');
